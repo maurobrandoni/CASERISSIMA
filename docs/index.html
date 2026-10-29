@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5efe7">
+    <meta name="description" content="Casserisima: catering, tablas y picadas para cumpleaños, casamientos y encuentros especiales. Consultá por una propuesta a tu medida por WhatsApp.">
+    <title>Casserisima | Catering para compartir</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <style>
+      .hero-copy {
+        padding-bottom: 30px;
+      }
+
+      .hero-note {
+        position: static;
+        margin-top: 40px;
+      }
+
+      .services {
+        padding-block: 78px;
+      }
+
+      .services .section-heading {
+        margin-bottom: 34px;
+      }
+
+      .services .section-heading h2 {
+        font-size: clamp(36px, 4vw, 48px);
+      }
+
+      .budget-section {
+        background: var(--paper);
+      }
+
+      .budget-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+
+      .budget-option {
+        padding: 26px;
+        border: 1px solid var(--line);
+        background: var(--cream);
+      }
+
+      .budget-option:last-child {
+        grid-column: 1 / -1;
+      }
+
+      .budget-option h3 {
+        margin-bottom: 18px;
+        color: var(--terracotta-dark);
+        font-family: var(--serif);
+        font-size: 24px;
+        font-weight: 500;
+      }
+
+      .budget-option p {
+        margin-bottom: 12px;
+        color: var(--brown-soft);
+        font-size: 13px;
+        line-height: 1.75;
+      }
+
+      .budget-option p:last-child {
+        margin-bottom: 0;
+      }
+
+      .budget-option strong {
+        color: var(--brown);
+      }
+
+      .instagram-link {
+        margin-top: 14px;
+      }
+
+      .instagram-link a {
+        color: rgba(252, 250, 246, 0.8);
+        font-size: 11px;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      .official-logo {
+        width: 205px;
+        height: 82px;
+        object-fit: cover;
+        object-position: 50% 50%;
+      }
+
+      .footer-brand .official-logo {
+        width: 190px;
+        height: 76px;
+      }
+
+      :root {
+        --cream: #f1e4df;
+        --paper: #f7eeea;
+        --sand: #e6d1d0;
+        --sand-dark: #c7a9a9;
+        --brown: #403632;
+        --brown-soft: #6f5f5e;
+        --terracotta: #a9767b;
+        --terracotta-dark: #80565e;
+        --olive: #827070;
+        --line: rgba(64, 54, 50, 0.16);
+      }
+
+      .site-header {
+        background: #f1e4df;
+      }
+
+      .hero {
+        background:
+          radial-gradient(ellipse at 2% 73%, rgba(216, 185, 187, 0.48), transparent 38%),
+          #f1e4df;
+      }
+
+      .intro {
+        background: #ead8d7;
+      }
+
+      .services {
+        background: #f0e2de;
+      }
+
+      .service-card:hover {
+        background: rgba(255, 249, 246, 0.62);
+      }
+
+      .budget-section {
+        background: #ddc2c3;
+      }
+
+      .budget-option,
+      .budget-option:last-child {
+        background: #f8efeb;
+      }
+
+      .boards {
+        background: #eadbd3;
+      }
+
+      .personal {
+        background: #49383b;
+      }
+
+      .gallery {
+        background: #f2e7e2;
+      }
+
+      .contact {
+        background:
+          radial-gradient(ellipse at 2% 100%, rgba(216, 185, 187, 0.5), transparent 40%),
+          #ead8d7;
+      }
+
+      .contact-channels {
+        display: grid;
+        gap: 14px;
+      }
+
+      .contact-channels .contact-direct {
+        margin: 0;
+      }
+
+      .contact-direct-icon.instagram-icon {
+        color: var(--terracotta-dark);
+      }
+
+      .contact-direct a:hover {
+        color: var(--terracotta-dark);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      .hero h1 {
+        font-size: clamp(44px, 5.2vw, 66px);
+      }
+
+      h2,
+      .section-heading h2,
+      .boards h2,
+      .contact h2 {
+        font-size: clamp(36px, 4vw, 48px);
+      }
+
+      .intro h2,
+      .personal h2 {
+        font-size: clamp(36px, 4.2vw, 49px);
+      }
+
+      .service-card h3 {
+        font-size: 18px;
+      }
+
+      .budget-option h3 {
+        font-size: 21px;
+      }
+
+      .form-heading h3 {
+        font-size: 22px;
+      }
+
+      @media (max-width: 760px) {
+        .hero-copy {
+          padding-bottom: 16px;
+        }
+
+        .hero-note {
+          margin-top: 30px;
+        }
+
+        .services {
+          padding-block: 60px;
+        }
+
+        .services .section-heading h2 {
+          font-size: clamp(32px, 7vw, 40px);
+        }
+
+        .hero h1 {
+          font-size: clamp(39px, 9.5vw, 54px);
+        }
+
+        .services .section-heading h2,
+        h2,
+        .section-heading h2,
+        .boards h2,
+        .contact h2,
+        .intro h2,
+        .personal h2 {
+          font-size: clamp(32px, 7.5vw, 42px);
+        }
+
+        .budget-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .budget-option:last-child {
+          grid-column: auto;
+        }
+
+        .budget-option {
+          padding: 22px;
+        }
+
+        .official-logo {
+          width: 175px;
+          height: 70px;
+        }
+      }
+
+      .container {
+        width: min(1320px, calc(100% - 72px));
+      }
+
+      .header-inner {
+        min-height: 96px;
+      }
+
+      .primary-nav {
+        gap: clamp(16px, 2vw, 29px);
+      }
+
+      .primary-nav > a:not(.button) {
+        font-size: 12px;
+      }
+
+      .official-logo,
+      .footer-brand .official-logo {
+        display: block;
+        width: min(250px, 24vw);
+        height: auto;
+        object-fit: contain;
+        object-position: center;
+      }
+
+      .budget-section {
+        padding-block: 96px;
+        background: #e9d9d8;
+      }
+
+      .budget-section .section-heading {
+        margin-bottom: 32px;
+      }
+
+      .budget-section .section-heading h2 {
+        font-size: clamp(32px, 3vw, 42px);
+      }
+
+      .budget-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        align-items: stretch;
+        gap: 20px;
+      }
+
+      .budget-option,
+      .budget-option:last-child {
+        grid-column: auto;
+        padding: 26px 25px;
+        border: 1px solid rgba(137, 91, 98, 0.2);
+        border-radius: 3px;
+        background: #fbf8f3;
+        box-shadow: 0 10px 28px rgba(64, 54, 50, 0.055);
+        transition: transform 180ms ease, box-shadow 180ms ease;
+      }
+
+      .budget-option:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 32px rgba(64, 54, 50, 0.1);
+      }
+
+      .budget-option h3 {
+        margin: 0 0 17px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid rgba(137, 91, 98, 0.2);
+        color: #895b62;
+        font-size: 17px;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+      }
+
+      .budget-option p {
+        margin: 0;
+        padding: 11px 0;
+        border-bottom: 1px solid rgba(64, 54, 50, 0.09);
+        color: #71635d;
+        font-size: 12px;
+        line-height: 1.65;
+      }
+
+      .budget-option p:last-child {
+        padding-bottom: 0;
+        border-bottom: 0;
+      }
+
+      .budget-option strong {
+        display: block;
+        margin-bottom: 3px;
+        color: #895b62;
+        font-size: 9px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      @media (max-width: 1100px) {
+        .container {
+          width: min(100% - 48px, 1320px);
+        }
+
+        .header-inner {
+          min-height: 82px;
+        }
+
+        .official-logo,
+        .footer-brand .official-logo {
+          width: min(205px, 23vw);
+        }
+
+        .budget-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 760px) {
+        .container {
+          width: min(100% - 40px, 560px);
+        }
+
+        .header-inner {
+          min-height: 72px;
+        }
+
+        .official-logo,
+        .footer-brand .official-logo {
+          width: min(190px, 52vw);
+        }
+
+        .budget-section {
+          padding-block: 68px;
+        }
+
+        .budget-grid {
+          grid-template-columns: 1fr;
+          gap: 14px;
+        }
+
+        .budget-option,
+        .budget-option:last-child {
+          padding: 21px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+    <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <symbol id="icon-whatsapp" viewBox="0 0 24 24">
+        <path d="M12 2.25a9.75 9.75 0 0 0-8.39 14.72L2.25 21.75l4.91-1.29A9.75 9.75 0 1 0 12 2.25Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"/>
+        <path d="M9.07 7.9c-.2-.43-.42-.44-.62-.45h-.53c-.18 0-.47.07-.72.34-.25.28-.95.93-.95 2.27s.97 2.63 1.1 2.81c.14.18 1.88 3.02 4.63 4.12 2.28.91 2.75.73 3.24.68.5-.05 1.6-.66 1.83-1.3.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.53-.32-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.17-1.33-.8-.72-1.34-1.61-1.5-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02Z" fill="currentColor"/>
+      </symbol>
+      <symbol id="icon-mark" viewBox="0 0 40 40">
+        <path d="M7 22.5h26l-2.6 9.2H9.6L7 22.5Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+        <path d="M11 18.5c2-3.1 4.1-3.1 6.1 0m3-4c2-3.1 4.1-3.1 6.1 0m-9.2 4c2-3.1 4.1-3.1 6.1 0M8 35h24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+      </symbol>
+    </svg>
+
+    <header class="site-header" id="inicio">
+      <div class="container header-inner">
+        <a class="brand" href="#inicio" aria-label="Casserisima Eventos &amp; Catering">
+          <img class="official-logo" src="imagenes%20caserissima/96660.png" alt="Casserisima Eventos &amp; Catering">
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="primary-nav">
+          <span></span><span></span>
+        </button>
+        <nav class="primary-nav" id="primary-nav" aria-label="Navegación principal">
+          <a href="#inicio">Inicio</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#opciones-presupuesto">Opciones</a>
+          <a href="#tablas">Tablas y picadas</a>
+          <a href="#galeria">Galería</a>
+          <a href="#contacto">Contacto</a>
+          <a class="button button-small button-dark nav-cta" href="https://wa.me/5493462626562?text=%C2%A1Hola%21%20Quisiera%20consultar%20por%20los%20servicios%20de%20Casserisima%20y%20solicitar%20un%20presupuesto" target="_blank" rel="noopener noreferrer">
+            <svg class="whatsapp-icon" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>Hablemos
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="contenido">
+      <section class="hero section-shell" aria-labelledby="hero-title">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow"><span class="eyebrow-line"></span>Catering hecho para compartir</p>
+            <h1 id="hero-title">Momentos especiales,<br><em>hechos para compartir.</em></h1>
+            <p class="hero-description">Creamos propuestas ricas y cuidadas para que cada encuentro se convierta en un recuerdo para disfrutar.</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="https://wa.me/5493462626562?text=%C2%A1Hola%21%20Quisiera%20consultar%20por%20los%20servicios%20de%20Casserisima%20y%20solicitar%20un%20presupuesto" target="_blank" rel="noopener noreferrer">
+                <svg class="whatsapp-icon" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>Consultar por WhatsApp
+              </a>
+              <a class="text-link" href="#servicios">Conocé nuestros servicios <span aria-hidden="true">↓</span></a>
+            </div>
+            <div class="hero-note"><span class="note-rule"></span><p>Un buen encuentro<br>empieza con algo rico.</p></div>
+          </div>
+          <div class="hero-visual">
+            <div class="hero-image-frame">
+              <img src="imagenes%20caserissima/IMG_3455.jpeg" alt="Mesa de catering con bandejas de fiambres, bocados y acompañamientos" fetchpriority="high" width="1100" height="1250">
+            </div>
+            <div class="hero-stamp" aria-label="Preparado con dedicación"><span>HECHO CON</span><span aria-hidden="true">♥</span><span>DEDICACIÓN</span></div>
+            <span class="hero-caption">Un lugar para cada ocasión</span>
+          </div>
+        </div>
+        <div class="hero-bottom container">
+          <span>BUEN SABOR · BUENOS ENCUENTROS</span><a href="#servicios" aria-label="Desplazarse a servicios">↓</a><span>HECHO PARA COMPARTIR</span>
+        </div>
+      </section>
+
+      <section class="intro section-pad" aria-labelledby="intro-title">
+        <div class="container intro-inner">
+          <p class="eyebrow">Una mesa, mil momentos</p>
+          <h2 id="intro-title">Celebrar juntos<br><em>sabe mejor.</em></h2>
+          <p class="intro-copy">En Casserisima acompañamos tus momentos especiales con sabores que reúnen. Nos ocupamos de los detalles para que vos puedas dedicarte a lo más importante: disfrutar.</p>
+          <span class="decorative-star" aria-hidden="true">✳</span>
+        </div>
+      </section>
+
+      <section class="services section-pad" id="servicios" aria-labelledby="services-title">
+        <div class="container">
+          <div class="section-heading">
+            <div><p class="eyebrow">Momentos para celebrar</p><h2 id="services-title">Catering para cada<br><em>ocasión especial.</em></h2></div>
+            <p class="section-heading-copy">Cada ocasión es distinta. Creamos propuestas para acompañar la tuya, con el sabor y el cuidado que merece.</p>
+          </div>
+          <div class="service-grid">
+            <article class="service-card"><span class="card-number">01</span><span class="service-icon" aria-hidden="true">♡</span><h3>Cumpleaños</h3><p>Un festejo especial empieza con una mesa lista para compartir.</p><span class="card-arrow" aria-hidden="true">↗</span></article>
+            <article class="service-card"><span class="card-number">02</span><span class="service-icon" aria-hidden="true">✳</span><h3>Casamientos</h3><p>Una celebración única, acompañada por una propuesta pensada para ustedes.</p><span class="card-arrow" aria-hidden="true">↗</span></article>
+            <article class="service-card"><span class="card-number">03</span><span class="service-icon" aria-hidden="true">⌂</span><h3>Fiestas de promoción</h3><p>Un gran logro merece un encuentro para celebrar con quienes estuvieron ahí.</p><span class="card-arrow" aria-hidden="true">↗</span></article>
+            <article class="service-card"><span class="card-number">04</span><span class="service-icon" aria-hidden="true">⌂</span><h3>Aniversarios y encuentros</h3><p>Para esas fechas que invitan a volver a encontrarse alrededor de la mesa.</p><span class="card-arrow" aria-hidden="true">↗</span></article>
+          </div>
+          <div class="services-footer">
+            <p>Eventos familiares, celebraciones y mucho más.</p>
+            <a class="button button-outline" href="https://wa.me/5493462626562?text=%C2%A1Hola%21%20Quisiera%20consultar%20por%20los%20servicios%20de%20Casserisima%20y%20solicitar%20un%20presupuesto" target="_blank" rel="noopener noreferrer"><svg class="whatsapp-icon" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>Consultar por WhatsApp</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="budget-section section-pad" id="opciones-presupuesto" aria-labelledby="budget-title">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Opciones de catering</p>
+              <h2 id="budget-title">Opciones de catering</h2>
+            </div>
+          </div>
+          <div class="budget-grid">
+            <article class="budget-option">
+              <h3>OPCIÓN 1 —</h3>
+              <p><strong>Recepción:</strong> Sándwich miga.</p>
+              <p><strong>Entrada:</strong> Pizzetas, sándwiches de miga, arrolladitos, empanadas y cazuelas.</p>
+              <p><strong>Plato principal:</strong> Bondiola desmenuzada con panes y salsas gourmet.</p>
+              <p><strong>Postre:</strong> Brownie con helado.</p>
+              <p><strong>Alternativas:</strong> Shots de mousse de chocolate, tiramisú o borachito.</p>
+            </article>
+            <article class="budget-option">
+              <h3>OPCIÓN 2 —</h3>
+              <p><strong>Recepción:</strong> Sándwich miga y chips de fiambres.</p>
+              <p><strong>Entrada:</strong> Tablas de fiambres y quesos con panes y vela comestible; sándwich miga y arrolladitos; pizzetas y empanadas de copetín; cazuelas.</p>
+              <p><strong>Plato principal:</strong> Bondiola desmenuzada con panes y salsas gourmet.</p>
+              <p><strong>Postre:</strong> Brownie con helado.</p>
+              <p><strong>Alternativas:</strong> Shots de mousse de chocolate, tiramisú o borachito.</p>
+            </article>
+            <article class="budget-option">
+              <h3>OPCIÓN 3 —</h3>
+              <p><strong>Recepción:</strong> Sándwich miga y bocados surtidos.</p>
+              <p><strong>Entrada:</strong> Pizzetas, sándwiches de miga, empanadas, tablas de fiambres y quesos con panes caseros y vela comestible, cazuelas.</p>
+              <p><strong>Plato principal:</strong> Bondiola desmenuzada con panes y salsas gourmet.</p>
+              <p><strong>Postre:</strong> Brownie con helado.</p>
+              <p><strong>Alternativas:</strong> Shots de mousse de chocolate, tiramisú o borachito.</p>
+            </article>
+            <article class="budget-option">
+              <h3>OPCIÓN 4 —</h3>
+              <p><strong>Recepción:</strong> Sándwich miga.</p>
+              <p><strong>Entrada:</strong> Tablas de fiambres y quesos, pizzetas, sándwiches de miga, arrolladitos, panes caseros y cazuelas.</p>
+              <p><strong>Plato principal:</strong> Arrollado de pollo o medallón de cerdo con salsa; ensaladas.</p>
+              <p><strong>Postre:</strong> Brownie con helado.</p>
+              <p><strong>Alternativas:</strong> Shots de mousse de chocolate, tiramisú o borachito.</p>
+            </article>
+            <article class="budget-option">
+              <h3>OPCIÓN 5 —</h3>
+              <p><strong>Recepción:</strong> Sándwich miga.</p>
+              <p><strong>Entrada 1:</strong> Isla de fiambres y quesos, pizzetas, sándwiches de miga, arrolladitos, panes caseros y cazuelas.</p>
+              <p><strong>Entrada 2:</strong> Empanada de carne.</p>
+              <p><strong>Plato principal:</strong> Pollo deshuesado, cortes de carne de vaca, matambre de cerdo y ensaladas.</p>
+              <p><strong>Postre:</strong> Brownie con helado.</p>
+              <p><strong>Alternativas:</strong> Shots de mousse de chocolate, tiramisú o borachito.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="boards section-pad" id="tablas" aria-labelledby="boards-title">
+        <div class="container boards-grid">
+          <div class="boards-photo">
+            <img src="imagenes%20caserissima/IMG_3454.jpeg" alt="Detalle de una tabla de fiambres, quesos, frutas y aceitunas" loading="lazy" width="1000" height="1200">
+            <span class="photo-label">PARA COMPARTIR, SIEMPRE</span>
+          </div>
+          <div class="boards-copy">
+            <p class="eyebrow">El centro de todas las miradas</p>
+            <h2 id="boards-title">Tablas para compartir<br><em>y disfrutar.</em></h2>
+            <p class="boards-description">Tablas pensadas para disfrutar sin apuro: una combinación de sabores y texturas para que cada quien encuentre su favorito.</p>
+            <ul class="ingredient-list"><li><span>01</span>Fiambres y quesos</li><li><span>02</span>Panes y acompañamientos</li><li><span>03</span>Dips y otros sabores para sumar</li></ul>
+            <p class="boards-note">Ideales para reuniones privadas, encuentros familiares, juntadas con amigos y ocasiones especiales.</p>
+            <a class="button button-primary" href="https://wa.me/5493462626562?text=%C2%A1Hola%21%20Quisiera%20consultar%20por%20los%20servicios%20de%20Casserisima%20y%20solicitar%20un%20presupuesto" target="_blank" rel="noopener noreferrer"><svg class="whatsapp-icon" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>Consultar por mi tabla</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="personal section-pad" aria-labelledby="personal-title">
+        <div class="container personal-inner">
+          <p class="eyebrow">A tu manera, para tu ocasión</p>
+          <h2 id="personal-title">Una propuesta<br><em>a tu medida.</em></h2>
+          <p>Adaptamos cada propuesta al tipo de evento y a la cantidad aproximada de invitados. Contanos qué estás organizando y conversamos sobre opciones y un presupuesto personalizado.</p>
+          <a class="text-link" href="#contacto">Contanos tu idea <span aria-hidden="true">↗</span></a><span class="personal-ornament" aria-hidden="true">✳</span>
+        </div>
+      </section>
+
+      <section class="gallery section-pad" id="galeria" aria-labelledby="gallery-title">
+        <div class="container">
+          <div class="section-heading gallery-heading">
+            <div><p class="eyebrow">Una probadita de lo que hacemos</p><h2 id="gallery-title">Momentos ricos,<br><em>para compartir.</em></h2></div>
+            <p class="section-heading-copy">Mesas preparadas, platos para disfrutar y muchos motivos para reunirse.</p>
+          </div>
+          <div class="gallery-grid">
+            <figure class="gallery-item gallery-item-tall"><img src="imagenes%20caserissima/IMG_3453.jpeg" alt="Bandejas de bocados y una tabla de fiambres y quesos preparados para un evento" loading="lazy" width="900" height="1100"><figcaption>Sabores que invitan a quedarse</figcaption></figure>
+            <figure class="gallery-item"><img src="imagenes%20caserissima/IMG_3457.jpeg" alt="Cortes de carne servidos en una bandeja" loading="lazy" width="800" height="600"><figcaption>La mesa está servida</figcaption></figure>
+            <figure class="gallery-item"><img src="imagenes%20caserissima/IMG_3458.jpeg" alt="Presentaciones de Casserisima y bandejas de bocados para compartir" loading="lazy" width="800" height="600"><figcaption>Para celebrar a lo grande</figcaption></figure>
+            <figure class="gallery-item gallery-item-wide"><img src="imagenes%20caserissima/IMG_3455.jpeg" alt="Bandejas de catering con fiambres, quesos y bocados variados" loading="lazy" width="1000" height="650"><figcaption>El gusto de compartir</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact section-pad" id="contacto" aria-labelledby="contact-title">
+        <div class="container contact-grid">
+          <div class="contact-copy">
+            <p class="eyebrow">Empecemos a organizar</p>
+            <h2 id="contact-title">¿Qué vamos a<br><em>celebrar?</em></h2>
+            <p>Contanos un poco sobre tu evento. Se abrirá WhatsApp con los datos que completes para que puedas revisar y enviar tu consulta.</p>
+            <div class="contact-channels">
+              <div class="contact-direct"><span class="contact-direct-icon" aria-hidden="true"><svg class="whatsapp-icon"><use href="#icon-whatsapp"></use></svg></span><div><span>También podés escribirnos directamente</span><a href="https://wa.me/5493462626562?text=%C2%A1Hola%21%20Quisiera%20consultar%20por%20los%20servicios%20de%20Casserisima%20y%20solicitar%20un%20presupuesto" target="_blank" rel="noopener noreferrer">+54 9 3462 626562</a></div></div>
+              <div class="contact-direct"><span class="contact-direct-icon instagram-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.8" r="0.8" fill="currentColor" stroke="none"></circle></svg></span><div><span>También podés encontrarnos en Instagram</span><a href="https://www.instagram.com/caserissima.catering/" target="_blank" rel="noopener noreferrer">@caserissima.catering</a></div></div>
+            </div>
+          </div>
+          <form class="contact-form" id="inquiry-form">
+            <div class="form-heading"><h3>Contanos tu idea</h3><p>Completá los datos y seguimos la charla por WhatsApp.</p></div>
+            <div class="form-row">
+              <div class="form-field"><label for="name">Nombre <span aria-hidden="true">*</span></label><input id="name" name="name" type="text" autocomplete="name" placeholder="Tu nombre" required></div>
+              <div class="form-field"><label for="phone">Número de teléfono</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Tu teléfono"></div>
+            </div>
+            <div class="form-row">
+              <div class="form-field"><label for="event-type">Tipo de evento</label><select id="event-type" name="eventType"><option value="">Elegí una opción</option><option>Cumpleaños</option><option>Casamiento</option><option>Fiesta de promoción</option><option>Aniversario</option><option>Evento familiar</option><option>Otro evento</option></select></div>
+              <div class="form-field"><label for="event-date">Fecha del evento</label><input id="event-date" name="eventDate" type="date"></div>
+            </div>
+            <div class="form-field"><label for="guests">Cantidad aproximada de invitados</label><input id="guests" name="guests" type="number" min="1" step="1" placeholder="Por ejemplo, 30"></div>
+            <div class="form-field"><label for="message">Mensaje adicional</label><textarea id="message" name="message" rows="3" placeholder="¿Qué te gustaría contarnos?"></textarea></div>
+            <button class="button button-primary form-submit" type="submit"><svg class="whatsapp-icon" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>Preparar consulta en WhatsApp</button>
+            <p class="form-disclaimer">No se envía información desde esta página. Podrás revisar y confirmar el envío desde WhatsApp.</p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-main">
+        <div class="footer-brand">
+          <a class="brand brand-light" href="#inicio" aria-label="Casserisima Eventos &amp; Catering"><img class="official-logo" src="imagenes%20caserissima/96660.png" alt="Casserisima Eventos &amp; Catering"></a>
+          <p>Vos disfrutá del encuentro,<br>nosotros nos encargamos del sabor.</p>
+        </div>
+        <div class="footer-nav-wrap"><h2>Explorá</h2><nav class="footer-nav" aria-label="Navegación del pie de página"><a href="#inicio">Inicio</a><a href="#servicios">Servicios</a><a href="#opciones-presupuesto">Opciones de presupuesto</a><a href="#tablas">Tablas y picadas</a><a href="#galeria">Galería</a><a href="#contacto">Contacto</a></nav></div>
+        <div class="footer-contact"><h2>¿Brindamos?</h2><p>Contanos qué estás celebrando.</p><a class="button button-footer" href="https://wa.me/5493462626562?text=%C2%A1Hola%21%20Quisiera%20consultar%20por%20los%20servicios%20de%20Casserisima%20y%20solicitar%20un%20presupuesto" target="_blank" rel="noopener noreferrer"><svg class="whatsapp-icon" aria-hidden="true"><use href="#icon-whatsapp"></use></svg>Escribinos por WhatsApp</a><p class="instagram-link"><a href="https://www.instagram.com/caserissima.catering/" target="_blank" rel="noopener noreferrer">Instagram</a></p></div>
+      </div>
+      <div class="container footer-bottom"><span>© <span id="current-year"></span> Casserisima</span><a href="#inicio">Volver arriba ↑</a></div>
+    </footer>
+    <a class="floating-whatsapp" href="https://wa.me/5493462626562?text=%C2%A1Hola%21%20Quisiera%20consultar%20por%20los%20servicios%20de%20Casserisima%20y%20solicitar%20un%20presupuesto" target="_blank" rel="noopener noreferrer" aria-label="Consultar a Casserisima por WhatsApp"><svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg></a>
+  </body>
+</html>
